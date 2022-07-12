@@ -51,9 +51,7 @@ InfoTypeConverter<double>::get(const curlpp::Easy & handle,
 				 CURLINFO info,
 				 double & value)
 {
-  curl_off_t tmp;
-  InfoGetter::get(handle, info, tmp);
-  value = (double)tmp;
+  InfoGetter::get(handle, info, value);
 }
 
 
