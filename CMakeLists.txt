@@ -55,22 +55,24 @@ add_subdirectory(extras)
 # Documented at https://cmake.org/cmake/help/v3.0/module/FindCURL.html?highlight=curlpp
 # Seems simple.
 
-message(STATUS "Looking for CURL")
-include(FindCURL)
-find_package(CURL REQUIRED)
+#message(STATUS "Looking for CURL")
+#include(FindCURL)
+#find_package(CURL REQUIRED)
 
-if(CURL_FOUND)
-  message(STATUS "Found CURL version: ${CURL_VERSION_STRING}")
-  message(STATUS "Using CURL include dir(s): ${CURL_INCLUDE_DIRS}")
-  message(STATUS "Using CURL lib(s): ${CURL_LIBRARIES}")
-else()
-  message(FATAL_ERROR "Could not find CURL")
-endif()
+#if(CURL_FOUND)
+#  message(STATUS "Found CURL version: ${CURL_VERSION_STRING}")
+#  message(STATUS "Using CURL include dir(s): ${CURL_INCLUDE_DIRS}")
+#  message(STATUS "Using CURL lib(s): ${CURL_LIBRARIES}")
+#else()
+#  message(FATAL_ERROR "Could not find CURL")
+#endif()
+
+set(CURL_LIBRARIES libcurl)
 
 # All following targets should search these directories for headers
 include_directories( 
   ${CMAKE_CURRENT_SOURCE_DIR}/include
-  ${CURL_INCLUDE_DIRS}
+#  ${CURL_INCLUDE_DIRS}
 )
 
 #########################################################################################
